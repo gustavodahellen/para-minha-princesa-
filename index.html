@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido de Casamento</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #nao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  #sim {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<button id="nao" onclick="moveNao()">Não</button>
+<button id="sim" onclick="mostrarAlianca()">Sim</button>
+
+<script>
+function moveNao() {
+  var naoButton = document.getElementById("nao");
+  var bodyWidth = document.body.clientWidth;
+  var bodyHeight = document.body.clientHeight;
+  var randomX = Math.floor(Math.random() * (bodyWidth - 100));
+  var randomY = Math.floor(Math.random() * (bodyHeight - 40));
+  naoButton.style.left = randomX + "px";
+  naoButton.style.top = randomY + "px";
+}
+
+function mostrarAlianca() {
+  var simButton = document.getElementById("sim");
+  var body = document.body;
+  body.style.backgroundImage = "url('alianca.jpg')";
+  body.style.backgroundSize = "cover";
+  simButton.textContent = "Eu te amo minha princesa";
+}
+</script>
+
+</body>
+</html>
